@@ -1,0 +1,16 @@
+.bg-light-main-color {
+    background-color: #a5a57e;
+  }
+  
+  .card-header{
+    background-color: var(--light-main-color) !important;
+    color: var(--white-color) !important; 
+    font-weight: bold;
+}
+.fs-14{
+    font-size: 13px !important;
+}
+
+tr:last-child{
+    border-bottom: none !important;
+}

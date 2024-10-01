@@ -1,0 +1,58 @@
+{
+  "sidebar": {
+    "overview": "Overview",
+    "charts": "Charts",
+    "profile": "Profile",
+    "keyStatistics": "Key statistics",
+    "subsidiariesPerformance": "Subsidiaries Performance",
+    "chart": "Chart",
+    "peers": "Peers",
+    "boardManagement": "Board & Management",
+    "foriegnOwnership": "Foriegn ownership",
+    "negotiatedDeals": "Negotiated deals",
+    "financialStatements": "Financials Statements",
+    "financialResutlts chart": "Financial Results Chart",
+    "ratio": "Ratio",
+    "financialReports": "Financial Reports",
+    "estimates": "Estimates",
+    "financialinformation": "Financial Information",
+    "majorShareholders": "Major Shareholders",
+    "sharePerformance": "Share Performance",
+    "corporateActions": "Corporate Actions",
+    "investorsPresentation": "Investors Presentation",
+    "businessSegments": "Business Segments",
+    "projects": "Projects",
+    "disclosures": "Disclosures",
+    "mergers": "Mergers & Asquistions",
+    "contacts": "Contacts IR"
+  },
+  "overviewPage": {
+    "title": "Abdulmohsen Alhokair Group for Tourism and Development",
+    "marketData": {
+      "marketTitle": "Market Data",
+      "lastTrade": "Last Trade (%) :",
+      "volume": "Volume :",
+      "change": "Change :",
+      "turnover": "Turnover :",
+      "changePercent": "Change (%) :",
+      "transactions": "Transactions :",
+      "open": "Open :",
+      "marketValue": "Market Value :",
+      "low": "Low  :",
+      "avgVolume3Months": "Avg Volume 3 Months :",
+      "high": "High :",
+      "avgTurnover3Months": "Avg Turnover 3 Months :",
+      "previousCloseValue": "Prev. Close :",
+      "avgTransactions3Months": "Avg Transactions 3 Months :",
+      "month3Change": "Change 3M :",
+      "ytdChange": "Change 12 M :",
+      "month6Change": "Change 6M :",
+      "month12Change": "YTD :"
+    },
+    "financialRatio": {
+      "financialRatio": "Financial Ratio",
+      "currenct": "Current"
+    }
+  },
+  "footer": "Powered By"
+}

@@ -1,0 +1,12 @@
+footer a{
+    text-decoration: none !important;
+    color: var(--link-color) !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+footer a:hover{
+text-decoration: underline !important ;
+}
+footer span{
+    font-weight: bold;
+}

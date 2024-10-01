@@ -1,0 +1,37 @@
+  .btn-lang{
+    background-color: var(--main-color) !important;
+    color: var(--white-color) !important;
+    border-radius: 5px;
+   }
+   .offcanvas-lg{
+    min-width: 194px !important;
+    max-width: 230px !important;
+  }
+  .nav-item {
+    border-bottom: 1px solid var(--main-color);
+    font-size: smaller;
+  }
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+  .nav-link {
+    display: block;
+    padding: 10px;
+    color: #000 !important;
+    text-decoration: none;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: var(--light-main-color);
+    color: var(--white-color) !important;
+  }
+  
+  .nav-link.active {
+    background-color: var(--main-color);
+    color: var(--white-color) !important;
+    font-weight: bold;
+  }
+  
