@@ -36,9 +36,8 @@ border-bottom: 1px solid slategrey !important;
    max-width: 30px !important;
    max-height: 30px !important;
 }
-.ar-text tr {
-    border-bottom: 1px solid var(--linkk-color) !important;
-   padding: 50px 0 !important;
+.ar-text tr td {
+    padding: 5px !important;
 }
  .ar-text tr:last-child{
     border-bottom: none !important;
