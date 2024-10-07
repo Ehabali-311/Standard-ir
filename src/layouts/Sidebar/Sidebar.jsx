@@ -7,12 +7,16 @@ const Sidebar = () => {
     const lang = i18n.language;
     const location = useLocation();
     const navigate = useNavigate();
-  const toggleLanguage = () => {
-        const newLang = lang === "en" ? "ar" : "en";
-       const newPath= location.pathname.replace(`/${lang}`, `/${newLang}`);
-        i18n.changeLanguage(newLang);
-        navigate(newPath);
-    }
+   const toggleLanguage = () => {
+      const newLang = lang === "en" ? "ar" : "en";
+      let newPath = location.pathname.replace(`/${lang}`, `/${newLang}`);
+      
+      // if (location.pathname.includes('/latestnews/') && location.pathname.includes('/disclosure/')) {
+      //   newPath = `/${newLang}`;
+      // }    
+      i18n.changeLanguage(newLang);
+      navigate(newPath);
+    };
   return (
     <>
       <nav className="navbar navbar-expand-lg  justify-content-end">

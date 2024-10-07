@@ -11,6 +11,19 @@
     font-size: 14px !important;
 }
 
-tr:last-child{
+tbody tr:last-child{
     border-bottom: none !important;
+}
+thead {
+    border-top: 1px solid slategrey !important;
+    border-bottom: 1px solid slategrey !important;
+}
+tbody tr td {
+    min-width: 90px;
+}
+a:hover{
+    color: var(--linkk-color) !important;
+}
+.btn-bg{
+    background-color: #eee !important;
 }

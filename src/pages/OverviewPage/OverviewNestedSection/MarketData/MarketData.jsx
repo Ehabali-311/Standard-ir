@@ -3,8 +3,7 @@ import "./MarketData.css";
 import { useTranslation } from "react-i18next";
 import { formatValue } from "../../../../utils/Helpers";
 const MarketData = ({ data }) => {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language;
+  const { t } = useTranslation();
   const marketData = data?.companyStockSummary;
 
   const closeValue = formatValue(marketData?.closeValue);

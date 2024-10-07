@@ -53,6 +53,60 @@
       "financialRatio": "Financial Ratio",
       "currenct": "Current"
     }
+    , "chartTicker": { 
+      "title" : "Chart Ticker",
+      "day" : "1 Day",
+      "day5": "5 Days",
+      "month3": "3 Months",
+      "month6": "6 Months",
+      "year": "1 Year",
+      "year2": "2 Years",
+      "year5": "5 Years",
+      "all": "All"
+    }, 
+      "earnings":{
+      "title": "Earnings",
+      "report": "Report",
+      "interim" : "Interim",
+      "year" : "Year" ,
+      "fiscalPeriods": {
+        "I1": "3 M",
+        "I2": "6 M",
+        "I3": "9 M",
+        "YEAR": "12 M"
+      }
+    },
+    "lastNews": {
+      "title": "Latest News"    
+    }
+    ,
+    "events":{
+      "title" : "Events",
+      "date" : "Date",
+      "event": "Event",
+      "venue": "Venue",
+      "details": "Details",
+      "market": "Market",
+      "company": "Company",
+      "calenderEventType": "Calender Event Type",
+      "eventResult": "Event Result"
+    },
+    "disclosers":{
+      "title": "Disclosures"
+    },
+    "corporateActions": {
+      "title": "Corporate Actions",
+      "recentChanges":"Recent Changes",
+      "previousCapital": "Previous Capital",
+      "previousNoShares": "Previous No. of Shares (M)",
+      "capitalChange": "Capital Change",
+      "currentCapital": "Current Capital (M SAR)",
+      "currentNoShares": "Current No. of Shares (M) (M)",
+      "type": "Type",
+      "announcedDate":"Announcement"   
+    }
   },
-  "footer": "Powered By"
+  "more": "More",
+  "footer": "Powered By", 
+  "notFound": " No data Found"
 }

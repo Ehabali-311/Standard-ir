@@ -1,0 +1,32 @@
+.bg-light-main-color {
+    background-color: #a5a57e;
+  }
+  
+  .card-header{
+    background-color: var(--light-main-color) !important;
+    color: var(--white-color) !important; 
+    font-weight: bold;
+}
+.fs-14{
+    font-size: 14px !important;
+}
+
+tbody tr:last-child{
+    border-bottom: none !important;
+}
+thead {
+    border-top: 1px solid slategrey !important;
+    border-bottom: 1px solid slategrey !important;
+}
+tbody tr td {
+    min-width: 80px;
+}
+a{
+    cursor: pointer !important;
+}
+a:hover{
+    color: var(--linkk-color) !important;
+}
+.btn-bg{
+    background-color: #eee !important;
+}

@@ -10,13 +10,16 @@ import BoardManagement from './pages/BoardManagementPage/BoardManagement'
 import SharePerformance from './pages/SharePerformance/SharePerformance'
 import FinancialInformation from './pages/FinancialInformation/FinancialInformation'
 import InvestorsPresentation from './pages/InvestorsPresentation/InvestorsPresentation'
-import Disclosures from './pages/Disclosures/Disclosures'
-import CorprateActions from './pages/CorporateActions/CorprateActions'
 import MajorShareholders from './pages/MajorShareholdersPage/MajorShareholders'
 import BusinessSegment from './pages/BusinessSegementsPage/BusinessSegment'
 import Projects from './pages/ProjectsPage/Projects'
 import Mergers from './pages/MergersAsquistions/Mergers'
 import Contact from './pages/ContactIR/Contact'
+import NewDetails from './pages/OverviewPage/OverviewNestedSection/LastNews/NewDetails/NewDetails'
+import LastNews from './pages/OverviewPage/OverviewNestedSection/LastNews/LastNews'
+import DisclserDetails from './pages/OverviewPage/OverviewNestedSection/Disclosers/DiscloserDetails/DisclserDetails'
+import Disclosers from './pages/OverviewPage/OverviewNestedSection/Disclosers/Disclosers'
+import CorporateActions from './pages/OverviewPage/OverviewNestedSection/CorporateActionPage/CorporateActions'
 
 function App() {
     const {i18n} = useTranslation();
@@ -31,14 +34,21 @@ function App() {
         <div className="col-sm-12 col-lg-10">
           <MainTitle/>
           <Routes>
-            <Route path={`/${lang}`}  element={<OverviewPage />} />
+            <Route path={`/${lang}`}  element={<OverviewPage />}/>
+            <Route path={`/${lang}/latestnews`} element={<LastNews />} />
+            <Route path={`/${lang}/latestnews/:id`}>
+              <Route index element={<NewDetails />} />
+            </Route>
             <Route path={`/${lang}/profile`}  element={<Profile />} />
             <Route path={`/${lang}/boardmangagement`}  element={<BoardManagement />} />
             <Route path={`/${lang}/shareperformance`}  element={<SharePerformance />} />
             <Route path={`/${lang}/financialinformation`}  element={<FinancialInformation />} />
             <Route path={`/${lang}/investorspresentation`}  element={<InvestorsPresentation />} />
-            <Route path={`/${lang}/disclosures`}  element={<Disclosures />} />
-            <Route path={`/${lang}/corprateactions`}  element={<CorprateActions />} />
+            <Route path={`/${lang}/disclosure`}  element={<Disclosers />} />
+            <Route path={`/${lang}/disclosure/:id`}  >
+            <Route index element={<DisclserDetails />} />
+            </Route>
+            <Route path={`/${lang}/corporateactions`}  element={<CorporateActions />} />
             <Route path={`/${lang}/majorshareholders`}  element={<MajorShareholders />} />
             <Route path={`/${lang}/businesssegment`}  element={<BusinessSegment />} />
             <Route path={`/${lang}/projects`}  element={<Projects />} />

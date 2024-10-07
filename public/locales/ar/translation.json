@@ -1,38 +1,114 @@
 {
-    "sidebar": {
-      "overview": "معلومات الشركة",
-      "charts": "Charts",
-      "profile": "ملف الشركة",
-      "keyStatistics": "معلومات خاصة",
-      "subsidiariesPerformance": "اداء الشركات التابعة",
-      "chart": "تشارت",
-      "peers": "شركات القطاع",
-      "boardManagement": "الهيكل التنظيمي",
-      "majorShareholders": "كبار المساهمين",
-      "foriegnOwnership": "ملكية الأجانب",
-      "negotiatedDeals": "الصفقات الخاصة",
-      "financialStatements": "القوائم المالية",
-      "ratio": "المؤشرات المالية",
-      "financialReports": "قائمة التقارير المالية",
-      "financialResutltsChart": "شارت النتائج المالية",
-      "investorsPresentation": "عرض المستثمرين",
-      "businessSegments":"التحليل القطاعي",
-      "corporateActions":"اجراءات الشركة",
-      "projects":"المشاريع",
-      "estimates":"توصيات المحللين",
-      "investorsOpinion":"اراء المستثمرين",
-      "financialinformation": "البيانات المالية",
-      "sharePerformance": "اداء السهم",
-      "disclosures":"الافصاحات",
-      "mergers":"الاندماجات والاستحواذات",
-      "contacts":"تواصل مع الشركة"
+  "sidebar": {
+    "overview": "معلومات الشركة",
+    "charts": "Charts",
+    "profile": "ملف الشركة",
+    "keyStatistics": "معلومات خاصة",
+    "subsidiariesPerformance": "اداء الشركات التابعة",
+    "chart": "تشارت",
+    "peers": "شركات القطاع",
+    "boardManagement": "الهيكل التنظيمي",
+    "majorShareholders": "كبار المساهمين",
+    "foriegnOwnership": "ملكية الأجانب",
+    "negotiatedDeals": "الصفقات الخاصة",
+    "financialStatements": "القوائم المالية",
+    "ratio": "المؤشرات المالية",
+    "financialReports": "قائمة التقارير المالية",
+    "financialResutltsChart": "شارت النتائج المالية",
+    "investorsPresentation": "عرض المستثمرين",
+    "businessSegments": "التحليل القطاعي",
+    "corporateActions": "اجراءات الشركة",
+    "projects": "المشاريع",
+    "estimates": "توصيات المحللين",
+    "investorsOpinion": "اراء المستثمرين",
+    "financialinformation": "البيانات المالية",
+    "sharePerformance": "اداء السهم",
+    "disclosures": "الافصاحات",
+    "mergers": "الاندماجات والاستحواذات",
+    "contacts": "تواصل مع الشركة"
+  },
+  "overviewPage": {
+    "title": "مجموعة عبدالمحسن الحكير للسياحة والتنمية (مجموعة الحكير)",
+    "marketData": {
+      "marketTitle": "اداء السهم",
+      "lastTrade": "اخر سعر :",
+      "volume": "حجم التداول :",
+      "change": "التغير :",
+      "turnover": "قيمة التداول :",
+      "changePercent": "التغير (%) :",
+      "transactions": " عدد الصفقات :",
+      "open": "الإفتتاح :",
+      "marketValue": "القيمة السوقية :",
+      "low": "الأدنى :",
+      "avgVolume3Months": "م. حجم التداول (3 أشهر) :",
+      "high": "الأعلى :",
+      "avgTurnover3Months": "م. قيمة التداول (3 أشهر) :",
+      "previousCloseValue": "الإغلاق السابق :",
+      "avgTransactions3Months": "م.عدد الصفقات (3 أشهر) :",
+      "month3Change": "التغير (3 أشهر) :",
+      "ytdChange": "التغير (12 أشهر) :",
+      "month6Change": "التغير (6 أشهر) :",
+      "month12Change": "التغير من بداية العام :"
     },
-    "overviewPage": {
-      "title": "مجموعة عبدالمحسن الحكير للسياحة والتنمية (مجموعة الحكير)",
-      "marketData": {"marketTitle": "اداء السهم" , "lastTrade" : "اخر سعر :" , "volume": "حجم التداول :", "change":"التغير :", "turnover" : "قيمة التداول :", "changePercent" : "التغير (%) :" , "transactions":" عدد الصفقات :", "open":"الإفتتاح :", "marketValue" : "القيمة السوقية :", "low":"الأدنى :", "avgVolume3Months": "م. حجم التداول (3 أشهر) :" , "high":"الأعلى :", "avgTurnover3Months":"م. قيمة التداول (3 أشهر) :","previousCloseValue":"الإغلاق السابق :","avgTransactions3Months":"م.عدد الصفقات (3 أشهر) :","month3Change":"التغير (3 أشهر) :","ytdChange":"التغير (12 أشهر) :","month6Change":"التغير (6 أشهر) :","month12Change":"التغير من بداية العام :"}
-,
-     "financialRatio" : {"financialRatio": "المؤشرات المالية" , "currenct": "الحالي" }
+    "financialRatio": {
+      "financialRatio": "المؤشرات المالية",
+      "currenct": "الحالي"
     },
-    "footer":"بواسطة"
-  }
-  
+
+    "chartTicker": {
+      "title": "شريط الرسم البياني ",
+      "day": " 1 يوم",
+      "day5": "5 ايام",
+      "month3": " 3 شهور",
+      "month6": " 6 شهور",
+      "year": "سنة",
+      "year2": "سنتين",
+      "year5": "5 سنوات",
+      "all": "الكل"
+    },
+    "earnings": {
+      "title": "النتائج المالية",
+      "report": "عنوان التقرير",
+      "interim": "مرحلي ",
+      "year": "السنة",
+      "fiscalPeriods": {
+        "I1": " 3 شهور",
+        "I2": "6 شهور",
+        "I3": "9 شهور",
+        "YEAR": " 12 شهر"
+      }
+    },
+    "lastNews": {
+      "title": "اخر الاخبار"
+    }
+    ,
+    "events":{
+      "title" : "المفكرة",
+      "date" : "تاريخ الحدث",
+      "event": "الحدث",
+      "venue": "موقع الحدث",
+      "details": "التفاصيل",
+      "market": "السوق",
+      "company": "الشركة",
+      "calenderEventType": "نوع الحدث",
+      "eventResult": "النتائج"
+    },
+    "disclosers":{
+      "title": "الإفصاحات"
+    },
+    "corporateActions": {
+      "title": "إجراءات الشركة",
+      "recentChanges":"التغير في رأس المال",
+      "previousCapital": "رأس المال السابق",
+      "previousNoShares": "عدد الاسهم قبل التغير",
+      "capitalChange": "نسبة التغير",
+      "currentCapital": "رأس المال بعد التغير (مليون ريال)",
+      "currentNoShares": "عدد الأسهم بعد التغير (مليون)",
+      "type": "النوع",
+      "announcedDate":"تاريخ الإعلان"   
+    }
+  },
+  "more": "المزيد",
+  "footer": "بواسطة",
+  "notFound": "لا توجد بيانات"
+}

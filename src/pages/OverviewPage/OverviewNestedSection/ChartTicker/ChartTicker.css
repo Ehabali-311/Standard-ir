@@ -1,0 +1,31 @@
+.nav-link {
+    display: block;
+    padding: 10px;
+    color: #000 !important;
+    text-decoration: none;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: var(--link-color) !important;
+    color: var(--white-color) !important;
+  }
+  
+  .nav-link.active {
+    background-color: var(--main-color) !important;
+    color: var(--white-color) !important;
+    font-weight: bold;
+  }
+  .card-header{
+    background-color: var(--light-main-color) !important;
+    color: var(--white-color) !important; 
+    font-weight: bold;
+}
+.chart-container{
+  min-height: 400px; 
+  max-height: 400px; 
+  min-width: 100%;
+  max-width: 100%;
+}

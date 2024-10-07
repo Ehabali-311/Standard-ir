@@ -3,28 +3,25 @@ import React, { useEffect, useState } from 'react';
 import { getToken } from '../../services/getToken';
 import { fetchOverviewData } from '../../services/apis';
 import MarketData from './OverviewNestedSection/MarketData/MarketData';
-// import { ToastContainer } from 'react-toastify';
 import FinancialRatio from './OverviewNestedSection/FinancialRatio/FinancialRatio';
+import ChartTicker from './OverviewNestedSection/ChartTicker/ChartTicker';
+import { useTranslation } from 'react-i18next';
+import Earnings from './OverviewNestedSection/Earnings/Earnings';
+import LastNews from './OverviewNestedSection/LastNews/LastNews';
+import Events from './OverviewNestedSection/Events/Events';
+import Disclosers from './OverviewNestedSection/Disclosers/Disclosers';
+import CorporateActions from './OverviewNestedSection/CorporateActionPage/CorporateActions';
 
 const OverviewPage = () => {
-  const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken'));
-
-  useEffect(() => {
-    if (!accessToken) {
-      getToken().then(() => {
-        const token = localStorage.getItem('accessToken');
-        setAccessToken(token);
-      });
-    }
-  }, [accessToken]);
-
-  const { data , isLoading , error} = useQuery({
-    queryKey: ["overviewData"],
-    queryFn: () => fetchOverviewData(accessToken),
-    enabled: !!accessToken,
-    // refetchInterval: 150000,
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const { data, isLoading } = useQuery({
+    queryKey: ["overview" , currentLanguage],
+    queryFn: () => fetchOverviewData( currentLanguage),
+    enabled: !!getToken(),
+    refetchOnWindowFocus: false,
+    refetchInterval: 15000,
   });
-
   if (isLoading) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">
@@ -34,24 +31,21 @@ const OverviewPage = () => {
       </div>
     );
   }
-
-  if (error) {
-    return (
-      <div className='alert alert-danger d-flex justify-content-center align-items-center' role="alert">
-        {error.message}
-      </div>
-    );
-  }
-
   return (
     <div className="mt-2">
       <div className="col-12">
         <div className="row ">
           <div className="col-xs-12 col-lg-6 ">
+            <ChartTicker data={data}/>
+            <LastNews data={data}/>
+            <Earnings data={data}/>
+            <Disclosers data={data}/>
           </div>
           <div className="col-xs-12 col-lg-6 ">
             <MarketData data={data}/>
           <FinancialRatio data={data}/>
+          <Events data={data}/>
+          <CorporateActions data={data}/>
           </div>
         </div>
       </div>

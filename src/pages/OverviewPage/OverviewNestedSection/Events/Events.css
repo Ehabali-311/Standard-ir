@@ -1,0 +1,51 @@
+.bg-light-main-color {
+    background-color: #a5a57e;
+  }
+  
+  .card-header{
+    background-color: var(--light-main-color) !important;
+    color: var(--white-color) !important; 
+    font-weight: bold;
+}
+.fs-12{
+    font-size: 12px !important;
+}
+
+tbody tr:last-child{
+    border-bottom: none !important;
+}
+tbody tr td {
+    min-width: 90px;
+}
+a{
+    color: var(--linkk-color) !important;
+    cursor: pointer !important;
+}
+.btn-bg{
+    background-color: #eee !important;
+}
+.detail{
+font-weight: bold !important;
+border-bottom: 1px solid slategrey !important;
+}
+.ar-text {
+    font-size: 0.9rem;  
+    line-height: 1.7rem;  
+  }
+.ar-text img {
+   max-width: 30px !important;
+   max-height: 30px !important;
+}
+.ar-text tr {
+    border-bottom: 1px solid var(--linkk-color) !important;
+   padding: 50px 0 !important;
+}
+ .ar-text tr:last-child{
+    border-bottom: none !important;
+}
+.btn-start{
+    text-align: start !important;
+}
+.btn-end{
+    text-align: end !important;
+}
