@@ -11,16 +11,31 @@ import LastNews from './OverviewNestedSection/LastNews/LastNews';
 import Events from './OverviewNestedSection/Events/Events';
 import Disclosers from './OverviewNestedSection/Disclosers/Disclosers';
 import CorporateActions from './OverviewNestedSection/CorporateActionPage/CorporateActions';
+import { jwtDecode } from 'jwt-decode';
 
 const OverviewPage = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
+  const isTokenExpired = (token) => {
+    if (!token) return true; 
+    const decodedToken = jwtDecode(token);
+    const currentTime = Date.now() / 1000; 
+    return decodedToken.exp < currentTime; 
+  };
+  const handleTokenError = async () => {
+    const token = localStorage.getItem("accessToken");
+    if (!token || isTokenExpired(token)) {
+      await getToken();  
+    }
+    return true;  
+  };
   const { data, isLoading } = useQuery({
     queryKey: ["overview" , currentLanguage],
     queryFn: () => fetchOverviewData( currentLanguage),
-    enabled: !!getToken(),
+    enabled: !!handleTokenError(),
     refetchOnWindowFocus: false,
-    refetchInterval: 15000,
+    refetchOnMount: false,
   });
   if (isLoading) {
     return (

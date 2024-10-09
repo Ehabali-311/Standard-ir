@@ -9,7 +9,7 @@
   }
   
   .nav-link:hover {
-    background-color: var(--link-color) !important;
+    background-color: var(--light-main-color) !important;
     color: var(--white-color) !important;
   }
   

@@ -9,13 +9,14 @@ const Earnings = ({ data }) => {
     <>
       <div className="card">
         <div className="card-header">{t("overviewPage.earnings.title")}</div>
-        <div className="card-body">
-          <table className="table table-responsive fs-14">
+        <hr className="m-2 mb-0 border-0"></hr>
+        <div className="container-lg table-responsive p-0">
+          <table className="table hover fs-14">
             <thead className="text-muted fw-bold bg-body-tertiary">
-              <tr>
-                <th>{t("overviewPage.earnings.report")}</th>
-                <th>{t("overviewPage.earnings.interim")}</th>
-                <th>{t("overviewPage.earnings.year")}</th>
+              <tr >
+                <th className="bg-head">{t("overviewPage.earnings.report")}</th>
+                <th className="bg-head">{t("overviewPage.earnings.interim")}</th>
+                <th className="bg-head">{t("overviewPage.earnings.year")}</th>
               </tr>
             </thead>
             <tbody>

@@ -2,11 +2,6 @@
     background-color: #a5a57e;
   }
   
-  .card-header{
-    background-color: var(--light-main-color) !important;
-    color: var(--white-color) !important; 
-    font-weight: bold;
-}
 .fs-14{
     font-size: 14px !important;
 }
@@ -14,3 +9,12 @@
 tr:last-child{
     border-bottom: none !important;
 }
+ul li button {
+    border-radius: 0 !important;
+}
+.actived{
+    background-color: #FFFFFF !important;
+    color: black !important;
+    border: 1px solid black !important;
+    border-bottom: 0 !important;
+} 

@@ -47,8 +47,7 @@
       "avgTransactions3Months": "م.عدد الصفقات (3 أشهر) :",
       "month3Change": "التغير (3 أشهر) :",
       "ytdChange": "التغير (12 أشهر) :",
-      "month6Change": "التغير (6 أشهر) :",
-      "month12Change": "التغير من بداية العام :"
+      "month6Change": "التغير (6 أشهر) :"
     },
     "financialRatio": {
       "financialRatio": "المؤشرات المالية",
@@ -94,7 +93,8 @@
       "eventResult": "النتائج"
     },
     "disclosers":{
-      "title": "الإفصاحات"
+      "title": "الإفصاحات",
+      "discloserShares": "مشاركة الافصاح"
     },
     "corporateActions": {
       "title": "إجراءات الشركة",
@@ -105,7 +105,15 @@
       "currentCapital": "رأس المال بعد التغير (مليون ريال)",
       "currentNoShares": "عدد الأسهم بعد التغير (مليون)",
       "type": "النوع",
-      "announcedDate":"تاريخ الإعلان"   
+      "announcedDate":"تاريخ الإعلان"   ,
+      "month12Change": "التغير من بداية العام :",
+      "recentDevidend": "احدث التوزيعات النقدية",
+      "capital": "رأس المال (مليون ريال)",
+      "shares":"عدد الأسهم ( مليون ريال )",
+      "divideCapital" : "النسبة من رأس المال",
+      "cashDividend" : "توزيعات أرباح نقدية",
+      "DividendPolicy" : "سياسة توزيع الأرباح",
+      "months":"أشهر"
     }
   },
   "more": "المزيد",

@@ -24,6 +24,7 @@ import CorporateActions from './pages/OverviewPage/OverviewNestedSection/Corpora
 function App() {
     const {i18n} = useTranslation();
     const lang = i18n.language;
+    
   return (
     <>
     <div className="container-fluid">

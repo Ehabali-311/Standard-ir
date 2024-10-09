@@ -9,8 +9,9 @@ const Disclosers = ({ data }) => {
     return (
       <div className="card">
         <div className="card-header">{t("overviewPage.disclosers.title")}</div>
-        <div className="card-body">
-          <table className="table table-responsive fs-14">
+        <hr className="m-2 mb-0 border-0"></hr>
+        <div className="container-lg table-responsive p-0 px-1">
+          <table className="table hover fs-14">
             <tbody>
               {discloserData?.map((discloserItem, index) => (
                 <tr key={index}>

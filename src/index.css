@@ -1,8 +1,6 @@
 *{
-        font-family: "Rubik", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
+        font-family: 'Neo Sans Arabic', sans-serif;
+        box-sizing: border-box !important;
 }
 :root {
     --white-color: #fff;
@@ -12,4 +10,16 @@
     --linkk-color:#374c5f;
 
   }
-  
+  .card-header{
+        background-color: var(--light-main-color) !important;
+        border-radius: 0% !important;
+        color: var(--white-color) !important; 
+        font-weight: bold;
+        padding: 5px 8px !important;
+    }
+    th ,td{
+        padding: 3.2px !important;
+    }
+    .bg-head{
+        background-color: #F8F9FA !important;
+    }

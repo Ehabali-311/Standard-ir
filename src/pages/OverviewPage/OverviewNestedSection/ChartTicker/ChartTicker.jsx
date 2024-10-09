@@ -5,7 +5,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useQuery } from "@tanstack/react-query";
 import { getToken } from "../../../../services/getToken";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; 
+import {jwtDecode} from "jwt-decode";
 const ChartTicker = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("1D");
@@ -20,14 +21,28 @@ const ChartTicker = () => {
     { display: t("overviewPage.chartTicker.all"), value: "AY" },
   ];
 
+  const isTokenExpired = (token) => {
+    if (!token) return true; // No token, treat as expired
+    const decodedToken = jwtDecode(token);
+    const currentTime = Date.now() / 1000; // Convert to seconds
+    return decodedToken.exp < currentTime; // Check if token is expired
+  };
+  const handleTokenError = async () => {
+    const token = localStorage.getItem("accessToken");
+    if (!token || isTokenExpired(token)) {
+      await getToken();  // Re-authenticate if token is missing or expired
+    }
+    return true;  // Enable the query once token is valid
+  };
   const { data, error } = useQuery({
     queryKey: ["chartTicker", activeTab],
     queryFn: () => ferchChartData(activeTab),
-    enabled: !!getToken(),
+    enabled: !!handleTokenError(),
     refetchOnWindowFocus: false,
-    refetchInterval: 15000,
+    refetchOnMount: false,
   });
 
+  
   const handleTabChange = (time) => {
     setActiveTab(time);
   };
@@ -60,9 +75,7 @@ const ChartTicker = () => {
         text: "",
       },
       chart: {
-        zooming: {
-          type: "x",
-        },
+        zoomType: "x", 
       },
       xAxis: {
         type: "datetime",
@@ -99,7 +112,7 @@ const ChartTicker = () => {
           type: "area",
           name: `Close: ${lastCloseValue} | Date: ${lastDate}`,
           data: chartData || [],
-          color: "#EE7B0B",
+          color: "#6B8ABC",
         },
       ],
       accessibility: {

@@ -28,13 +28,14 @@ const Events = ({ data }) => {
     <>
       <div className="card">
         <div className="card-header">{t("overviewPage.events.title")}</div>
-        <div className="card-body">
-          <table className="table table-responsive sticky fs-14">
-            <thead className="text-muted fw-bold bg-body-tertiary">
+        <hr className="m-2 mb-0 border-0"></hr>
+        <div className="container-lg table-responsive p-0">
+          <table className="table hover fs-14">
+            <thead className="text-muted fw-bold">
               <tr>
-                <th>{t("overviewPage.events.date")}</th>
-                <th>{t("overviewPage.events.event")}</th>
-                <th className="text-center">
+                <th className="bg-head">{t("overviewPage.events.date")}</th>
+                <th className="bg-head">{t("overviewPage.events.event")}</th>
+                <th  className="text-center bg-head">
                   {t("overviewPage.events.venue")}
                 </th>
               </tr>
@@ -69,7 +70,7 @@ const Events = ({ data }) => {
             </tbody>
           </table>
           <div>
-            <button className="btn btn-bg w-100 d-flex justify-content-end align-items-center bg-body-tertiary">
+            <button className="btn btn-bg w-100 d-flex justify-content-end align-items-center bg-body-tertiary mb-1">
               {`${t("more")}`}
             </button>
           </div>

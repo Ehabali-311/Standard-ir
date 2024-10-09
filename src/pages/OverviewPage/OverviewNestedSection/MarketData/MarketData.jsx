@@ -26,12 +26,13 @@ const MarketData = ({ data }) => {
 
   return (
     <>
-      <div className="card">
+      <div className="card pb-0">
         <div className="card-header">
           {t("overviewPage.marketData.marketTitle")}
         </div>
-        <div className="px-1">
-          <table className="table table-hover table-responsive table-borderless fs-14">
+    <hr className="m-2 mb-0"></hr>
+        <div className="container-lg  table-responsive pb-0">
+          <table className="table table-hover table-borderless fs-14">
             <tbody>
               <tr className="border-bottom">
                 <th>{t("overviewPage.marketData.lastTrade")}</th>

@@ -4,8 +4,13 @@
   
   .card-header{
     background-color: var(--light-main-color) !important;
+    border-radius: 0% !important;
     color: var(--white-color) !important; 
     font-weight: bold;
+    padding: 5px 8px !important;
+}
+th ,td{
+    padding: 3.2px !important;
 }
 .fs-14{
     font-size: 14px !important;

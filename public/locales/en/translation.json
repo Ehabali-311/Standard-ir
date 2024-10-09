@@ -30,7 +30,7 @@
     "title": "Abdulmohsen Alhokair Group for Tourism and Development",
     "marketData": {
       "marketTitle": "Market Data",
-      "lastTrade": "Last Trade (%) :",
+      "lastTrade": "Last Trade :",
       "volume": "Volume :",
       "change": "Change :",
       "turnover": "Turnover :",
@@ -92,7 +92,8 @@
       "eventResult": "Event Result"
     },
     "disclosers":{
-      "title": "Disclosures"
+      "title": "Disclosures",
+      "discloserShares": "Discloser Share"
     },
     "corporateActions": {
       "title": "Corporate Actions",
@@ -103,7 +104,14 @@
       "currentCapital": "Current Capital (M SAR)",
       "currentNoShares": "Current No. of Shares (M) (M)",
       "type": "Type",
-      "announcedDate":"Announcement"   
+      "announcedDate":"Announcement" ,
+      "recentDevidend": "Recent Dividends",
+      "capital": "Capital (Million SAR)",
+      "shares":"Shares (mn)",
+      "divideCapital" : "Dividends/Capital (%)",
+      "cashDividend" : "Cash Dividend",
+      "DividendPolicy" : "Dividend Policy",
+      "months":"Months"
     }
   },
   "more": "More",

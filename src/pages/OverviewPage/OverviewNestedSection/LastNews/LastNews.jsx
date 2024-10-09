@@ -9,8 +9,9 @@ const LastNews = ({ data }) => {
   return (
     <div className="card">
       <div className="card-header">{t("overviewPage.lastNews.title")}</div>
-      <div className="card-body">
-        <table className="table table-responsive fs-14">
+      <hr className="m-2 mb-0 "></hr>
+        <div className="container-lg table-responsive p-0 px-1">
+          <table className="table hover fs-14">
           <tbody>
             {news?.map((newsItem, index) => (
               <tr key={index}>
@@ -33,7 +34,7 @@ const LastNews = ({ data }) => {
             ))}
           </tbody>
         </table>
-        <button className="btn btn-bg w-100 d-flex justify-content-end align-items-center bg-body-tertiary">
+        <button className="btn btn-bg w-100 d-flex justify-content-end align-items-center bg-body-tertiary mb-1">
           {`${t("more")}`}
         </button>
       </div>
