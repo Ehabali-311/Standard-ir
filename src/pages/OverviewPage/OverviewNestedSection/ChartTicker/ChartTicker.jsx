@@ -66,7 +66,7 @@ const ChartTicker = () => {
           text: ``,
         },
         min: yAxisMin,
-        max: yAxisMax,
+        max: yAxisMax + 0.01,
         labels: {
           formatter: function () {
             return this.value.toFixed(2);
@@ -120,7 +120,7 @@ const ChartTicker = () => {
           ))}
         </ul>
 
-        <div className="chart-container">
+        <div className="chart-container mt-1">
           {data && (
             <HighchartsReact highcharts={Highcharts} options={chartOptions} />
           )}

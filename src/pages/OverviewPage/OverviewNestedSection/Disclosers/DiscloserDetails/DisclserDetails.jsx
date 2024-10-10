@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import './DisclserDetails.css';
-import { useApiQuery } from "../../../../../services/useApiQuery";
 const DisclserDetails = ({data , isLoading}) => {
   const { id } = useParams();
   const { t } = useTranslation();
@@ -65,11 +64,11 @@ const DisclserDetails = ({data , isLoading}) => {
 
   return (
     <div className="container mt-2">
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between mb-2">
         <h4 className="my-3 fw-bold">{discloserItem.title}</h4>
-        <div className="py-3 d-flex flex-column align-items-center icons-collection">
+        <div className="py-2 d-flex flex-column align-items-center icons-collection">
           <h6>{t("overviewPage.disclosers.discloserShares")}</h6>
-          <div>
+          <div className="d-flex justify-content-center align-items-center px-1">
             <a  onClick={shareOnFacebook} >
          <i className="fa-brands fa-facebook fa-xl me-2" aria-hidden="true"></i>
             </a>

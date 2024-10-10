@@ -1,16 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useApiQuery } from '../../../../../services/useApiQuery';
 
 const NewDetails = ({data , isLoading}) => {
   const { id } = useParams();
-  const { i18n } = useTranslation();
-  // const currentLanguage = i18n.language;
   const navigate = useNavigate();
-
-
 
   const newsItem = data?.latestNews?.find(
     (news) => news.articleID.toString() === id
