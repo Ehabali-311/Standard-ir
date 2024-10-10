@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchOverviewData } from '../../../../../services/apis';
+import { useApiQuery } from '../../../../../services/useApiQuery';
 
 const NewDetails = () => {
   const { id } = useParams();
@@ -10,12 +10,8 @@ const NewDetails = () => {
   const currentLanguage = i18n.language;
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["overview", currentLanguage],
-    queryFn: () => fetchOverviewData(currentLanguage),
-    enabled: !!id,
-    refetchOnWindowFocus: false,
-  });
+  const { data, isLoading } = useApiQuery("overview", currentLanguage);
+
 
   const newsItem = data?.latestNews?.find(
     (news) => news.articleID.toString() === id

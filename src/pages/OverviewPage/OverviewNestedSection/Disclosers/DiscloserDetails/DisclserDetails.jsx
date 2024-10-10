@@ -1,21 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchOverviewData } from "../../../../../services/apis";
 import './DisclserDetails.css';
+import { useApiQuery } from "../../../../../services/useApiQuery";
 const DisclserDetails = () => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const currentLanguage = i18n.language;
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["overview", currentLanguage],
-    queryFn: () => fetchOverviewData(currentLanguage),
-    enabled: !!id,
-    refetchOnWindowFocus: false,
-  });
+  
+  const { data, isLoading } = useApiQuery("overview", currentLanguage);
 
   const discloserItem = data?.discloser?.find(
     (dis) => dis.articleID.toString() === id

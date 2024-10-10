@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./ChartTicker.css";
-import { ferchChartData } from "../../../../services/apis";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { useQuery } from "@tanstack/react-query";
-import { getToken } from "../../../../services/getToken";
 import { useTranslation } from "react-i18next"; 
-import {jwtDecode} from "jwt-decode";
+import { useApiQuery } from "../../../../services/useApiQuery";
 const ChartTicker = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("1D");
@@ -21,28 +18,8 @@ const ChartTicker = () => {
     { display: t("overviewPage.chartTicker.all"), value: "AY" },
   ];
 
-  const isTokenExpired = (token) => {
-    if (!token) return true; // No token, treat as expired
-    const decodedToken = jwtDecode(token);
-    const currentTime = Date.now() / 1000; // Convert to seconds
-    return decodedToken.exp < currentTime; // Check if token is expired
-  };
-  const handleTokenError = async () => {
-    const token = localStorage.getItem("accessToken");
-    if (!token || isTokenExpired(token)) {
-      await getToken();  // Re-authenticate if token is missing or expired
-    }
-    return true;  // Enable the query once token is valid
-  };
-  const { data, error } = useQuery({
-    queryKey: ["chartTicker", activeTab],
-    queryFn: () => ferchChartData(activeTab),
-    enabled: !!handleTokenError(),
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
+  const { data } = useApiQuery("chartData", activeTab);
 
-  
   const handleTabChange = (time) => {
     setActiveTab(time);
   };

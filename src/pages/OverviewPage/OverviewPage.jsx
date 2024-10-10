@@ -1,7 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
-import { getToken } from '../../services/getToken';
-import { fetchOverviewData } from '../../services/apis';
 import MarketData from './OverviewNestedSection/MarketData/MarketData';
 import FinancialRatio from './OverviewNestedSection/FinancialRatio/FinancialRatio';
 import ChartTicker from './OverviewNestedSection/ChartTicker/ChartTicker';
@@ -11,32 +8,14 @@ import LastNews from './OverviewNestedSection/LastNews/LastNews';
 import Events from './OverviewNestedSection/Events/Events';
 import Disclosers from './OverviewNestedSection/Disclosers/Disclosers';
 import CorporateActions from './OverviewNestedSection/CorporateActionPage/CorporateActions';
-import { jwtDecode } from 'jwt-decode';
+import { useApiQuery } from '../../services/useApiQuery';
 
 const OverviewPage = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const isTokenExpired = (token) => {
-    if (!token) return true; 
-    const decodedToken = jwtDecode(token);
-    const currentTime = Date.now() / 1000; 
-    return decodedToken.exp < currentTime; 
-  };
-  const handleTokenError = async () => {
-    const token = localStorage.getItem("accessToken");
-    if (!token || isTokenExpired(token)) {
-      await getToken();  
-    }
-    return true;  
-  };
-  const { data, isLoading } = useQuery({
-    queryKey: ["overview" , currentLanguage],
-    queryFn: () => fetchOverviewData( currentLanguage),
-    enabled: !!handleTokenError(),
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
+  const { data, isLoading } = useApiQuery("overview", currentLanguage);
+
   if (isLoading) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">
