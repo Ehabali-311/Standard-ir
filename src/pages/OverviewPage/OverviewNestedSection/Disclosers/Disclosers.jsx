@@ -25,7 +25,7 @@ const Disclosers = ({ data }) => {
                     </Link>
                     <div className="text-muted">
                       {discloserItem.articleSourceName}
-                      <span className="ms-2 text-secondary me-2">
+                      <span className="ms-2 text-muted me-2">
                       {discloserItem.publishedOn.split(" ")[0]}
                       </span>
                     </div>

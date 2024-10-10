@@ -14,4 +14,8 @@
     }
   }
   
-  
+ .bg-app{
+  background: url(./assets/hero.png) center center / cover no-repeat;
+  background-color: #0068b3d4;
+  background-blend-mode: overlay;
+}

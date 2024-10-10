@@ -7,10 +7,10 @@ const MarketData = ({ data }) => {
   const marketData = data?.companyStockSummary;
 
   const closeValue = formatValue(marketData?.closeValue);
-  const volume = formatValue(marketData?.volume);
   const change = formatValue(marketData?.change);
-  const amount = formatValue(marketData?.amount);
   const percentageChange = formatValue(marketData?.percentageChange);
+  const volume = formatValue(marketData?.volume);
+  const amount = formatValue(marketData?.amount);
   const contractCount = formatValue(marketData?.contractCount);
   const openValue = formatValue(marketData?.openValue);
   const marketValue = formatValue(marketData?.marketValue);

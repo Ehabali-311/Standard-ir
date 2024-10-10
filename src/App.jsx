@@ -20,11 +20,26 @@ import LastNews from './pages/OverviewPage/OverviewNestedSection/LastNews/LastNe
 import DisclserDetails from './pages/OverviewPage/OverviewNestedSection/Disclosers/DiscloserDetails/DisclserDetails'
 import Disclosers from './pages/OverviewPage/OverviewNestedSection/Disclosers/Disclosers'
 import CorporateActions from './pages/OverviewPage/OverviewNestedSection/CorporateActionPage/CorporateActions'
-
+import logo from './assets/logo.png'
+import { useApiQuery } from './services/useApiQuery'
 function App() {
     const {i18n} = useTranslation();
     const lang = i18n.language;
-    
+    const { data, isLoading } = useApiQuery("overview", lang);
+    if (isLoading) {
+      return (
+        <div className="d-flex justify-content-center align-items-center vh-100 bg-app">
+          <div className="text-center">
+            <img
+              src={logo}
+              alt="Loading"
+              className="mb-3 ms-3"
+              style={{ width: '400px', height: '200px' }} 
+            />
+          </div>
+        </div>
+      );
+    }
   return (
     <>
     <div className="container-fluid">
@@ -35,7 +50,7 @@ function App() {
         <div className="col-sm-12 col-lg-10">
           <MainTitle/>
           <Routes>
-            <Route path={`/${lang}`}  element={<OverviewPage />}/>
+            <Route path={`/${lang}`}  element={<OverviewPage data={data} />}/>
             <Route path={`/${lang}/latestnews`} element={<LastNews />} />
             <Route path={`/${lang}/latestnews/:id`}>
               <Route index element={<NewDetails />} />
