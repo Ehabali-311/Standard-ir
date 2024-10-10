@@ -2,11 +2,8 @@ import React from "react";
 import "./MainTitle.css";
 import { useTranslation } from "react-i18next";
 import { formatValue } from "../../utils/Helpers";
-import { useApiQuery } from "../../services/useApiQuery";
-const MainTitle = () => {
-  const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-  const { data } = useApiQuery("overview", currentLanguage);
+const MainTitle = ({data}) => {
+  const { t } = useTranslation();
   const marketDataTitle = data?.companyStockSummary ;
   const closeValue = marketDataTitle ? formatValue(marketDataTitle?.closeValue) : { formattedValue: '', colorClass: '' };
   const change = marketDataTitle ? formatValue(marketDataTitle?.change) : { formattedValue: '', suceesClass: '' };
@@ -27,17 +24,17 @@ const MainTitle = () => {
             {t("overviewPage.title")}
           </h3>
           <div className="d-flex align-items-start justify-content-start dynamicTitle">
-            <span className={`${closeValue.colorClass} h4 mb-0 me-2 fw-bold `}>
+            <span className={`${closeValue.colorClass} h4 mb-0 mx-2 fw-bold `}>
               {closeValue.formattedValue}
-              {marketDataTitle && (
-                <i className={`fa-solid ms-1 ${arrowIconClass} fa-sm`}></i>
-              )}
             </span>
-            <span className={`${change.suceesClass} h4 mb-0 fw-bold`}>
+            <span className={`${change.suceesClass} h4 mb-0 fw-bold mx-1`}>
+            {marketDataTitle && (
+                <i className={`fa-solid mx-2 ${arrowIconClass} fa-sm`}></i>
+              )}
               {change.formattedValue}
             </span>
             <span
-              className={`${percentageChange.suceesClass} ms-2 h4 mb-0 fw-bold `}
+              className={`${percentageChange.suceesClass} mx-1 h4 mb-0 fw-bold `}
             >{marketDataTitle && `${percentageChange.formattedValue} %`}</span>
           </div>
         </div>

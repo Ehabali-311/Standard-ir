@@ -48,7 +48,7 @@ function App() {
           <Sidebar />
         </div>
         <div className="col-sm-12 col-lg-10">
-          <MainTitle/>
+          <MainTitle data={data}/>
           <Routes>
             <Route path={`/${lang}`}  element={<OverviewPage data={data} />}/>
             <Route path={`/${lang}/latestnews`} element={<LastNews />} />
