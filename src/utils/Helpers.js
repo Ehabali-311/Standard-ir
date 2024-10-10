@@ -5,7 +5,7 @@ export const formatValue = (value) => {
   
     const numberValue = parseFloat(value);
   
-    const formattedValue = Math.abs(numberValue).toLocaleString('de-DE', {  minimumFractionDigits: numberValue % 1 === 0 ? 0 : 2 , maximumFractionDigits: 2 });
+    const formattedValue = Math.abs(numberValue).toLocaleString('en-US', {  minimumFractionDigits: numberValue % 1 === 0 ? 0 : 2 , maximumFractionDigits: 2 });
     const colorClass = numberValue < 0 ? 'text-danger' : 'text-dark';
     const suceesClass = numberValue > 0 ? 'text-success' : 'text-danger';
     return { formattedValue, colorClass , suceesClass };
