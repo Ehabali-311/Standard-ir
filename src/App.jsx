@@ -53,7 +53,7 @@ function App() {
             <Route path={`/${lang}`}  element={<OverviewPage data={data} />}/>
             <Route path={`/${lang}/latestnews`} element={<LastNews />} />
             <Route path={`/${lang}/latestnews/:id`}>
-              <Route index element={<NewDetails />} />
+              <Route index element={<NewDetails data={data} isLoading={isLoading} />} />
             </Route>
             <Route path={`/${lang}/profile`}  element={<Profile />} />
             <Route path={`/${lang}/boardmangagement`}  element={<BoardManagement />} />
@@ -62,7 +62,7 @@ function App() {
             <Route path={`/${lang}/investorspresentation`}  element={<InvestorsPresentation />} />
             <Route path={`/${lang}/disclosure`}  element={<Disclosers />} />
             <Route path={`/${lang}/disclosure/:id`}  >
-            <Route index element={<DisclserDetails />} />
+            <Route index element={<DisclserDetails data={data} isLoading={isLoading} />} />
             </Route>
             <Route path={`/${lang}/corporateactions`}  element={<CorporateActions />} />
             <Route path={`/${lang}/majorshareholders`}  element={<MajorShareholders />} />

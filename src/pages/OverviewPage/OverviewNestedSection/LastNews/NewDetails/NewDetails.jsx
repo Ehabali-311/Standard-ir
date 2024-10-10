@@ -4,13 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useApiQuery } from '../../../../../services/useApiQuery';
 
-const NewDetails = () => {
+const NewDetails = ({data , isLoading}) => {
   const { id } = useParams();
   const { i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  // const currentLanguage = i18n.language;
   const navigate = useNavigate();
 
-  const { data, isLoading } = useApiQuery("overview", currentLanguage);
 
 
   const newsItem = data?.latestNews?.find(
@@ -22,16 +21,6 @@ const NewDetails = () => {
       navigate("/"); 
     }
   }, [newsItem, isLoading, navigate]); 
-
-  if (isLoading) {
-    return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
 
   if (!newsItem) {
     return (

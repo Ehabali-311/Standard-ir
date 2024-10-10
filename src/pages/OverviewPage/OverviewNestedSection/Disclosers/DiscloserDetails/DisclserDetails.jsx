@@ -3,14 +3,10 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import './DisclserDetails.css';
 import { useApiQuery } from "../../../../../services/useApiQuery";
-const DisclserDetails = () => {
+const DisclserDetails = ({data , isLoading}) => {
   const { id } = useParams();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
-  const currentLanguage = i18n.language;
-
-  
-  const { data, isLoading } = useApiQuery("overview", currentLanguage);
 
   const discloserItem = data?.discloser?.find(
     (dis) => dis.articleID.toString() === id
@@ -58,16 +54,6 @@ const DisclserDetails = () => {
         console.error("Failed to copy: ", err);
       });
   };
-
-  if (isLoading) {
-    return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
 
   if (!discloserItem) {
     return (
