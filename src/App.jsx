@@ -22,7 +22,27 @@ import Disclosers from './pages/OverviewPage/OverviewNestedSection/Disclosers/Di
 import CorporateActions from './pages/OverviewPage/OverviewNestedSection/CorporateActionPage/CorporateActions'
 import logo from './assets/logo.png'
 import { useApiQuery } from './services/useApiQuery'
+import { useEffect } from 'react'
 function App() {
+  useEffect(() => {
+    const updateParent = () => {
+      const height = document.documentElement.scrollHeight;
+      const scrollY = window.scrollY;
+      window.parent.postMessage({ height, scrollY }, '*');
+    };
+
+    updateParent();
+    window.addEventListener('resize', updateParent);
+    new MutationObserver(updateParent).observe(document.body, { childList: true, subtree: true });
+
+    window.addEventListener('scroll', updateParent);
+
+    return () => {
+      window.removeEventListener('resize', updateParent);
+      window.removeEventListener('scroll', updateParent);
+    };
+  }, []);
+
     const {i18n} = useTranslation();
     const lang = i18n.language;
     const { data, isLoading } = useApiQuery("overview", lang);
