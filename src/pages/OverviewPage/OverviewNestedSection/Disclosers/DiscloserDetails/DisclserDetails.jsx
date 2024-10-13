@@ -54,6 +54,20 @@ const DisclserDetails = ({data , isLoading}) => {
       });
   };
 
+  useEffect(() => {
+    const sendHeight = () => {
+      const height = document.body.scrollHeight ;
+      window.parent.postMessage({ height }, '*'); 
+    };
+
+    sendHeight();
+    window.addEventListener('resize', sendHeight);
+
+    return () => {
+      window.removeEventListener('resize', sendHeight);
+    };
+  }, []);
+
   if (!discloserItem) {
     return (
       <div className="container mt-2">

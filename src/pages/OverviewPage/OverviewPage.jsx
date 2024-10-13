@@ -7,7 +7,6 @@ import Events from './OverviewNestedSection/Events/Events';
 import Disclosers from './OverviewNestedSection/Disclosers/Disclosers';
 import CorporateActions from './OverviewNestedSection/CorporateActionPage/CorporateActions';
 const OverviewPage = ({data}) => {
-
   return (
     <div className="mt-2">
       <div className="col-12">

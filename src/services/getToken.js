@@ -6,7 +6,7 @@ export const getToken = async () => {
 
   try {
     const response = await axios.post(
-      "https://data-ir.argaam.com/authenticate",
+      "https://data.argaam.com/authenticate",
       {
         Username: username,
         Password: password,
